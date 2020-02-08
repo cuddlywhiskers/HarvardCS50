@@ -1,4 +1,4 @@
-# Harvard CS50x 2020 Problem Set 1
+# Harvard CS50x 2020 Problem Set 2
 
 This problem set consists of 3 questions (1 optional ones), kindly refer to this link for more info: https://cs50.harvard.edu/x/2020/psets/2/
 
