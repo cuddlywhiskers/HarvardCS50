@@ -2,7 +2,7 @@
 
 This [problem set](https://cs50.harvard.edu/x/2020/psets/4/) consists of 3 questions.
 
-First two questions attempt to create a code that reads, filters and output new images depending on user's desired filter choice. 
+First two problem statements attempt to create a code that reads, filters and output an image depending on user's desired filter choice. 
 
 - [x] **filter** (less): create four different filter - grayscale, sepia, reflect, blur
 - grayscale: creates black-scale image by adjusting each pixel to the avg RBG of that pixel. 
