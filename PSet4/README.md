@@ -9,3 +9,9 @@ First two problem statements attempt to create a code that reads, filters and ou
 - sepia: applies sepia by by adjusting each pixel with a specific formula 
 - reflect: projects a mirror image of the picture by 'swaping' each pixel. 
 - blur: blurs an image by taking the average RGB values of 8 other neighbouring pixels around each pixel. 
+
+- [x] **filter** (more): create four different filter - grayscale, reflect, blur, edges
+- grayscale: creates black-scale image by adjusting each pixel to the avg RBG of that pixel. 
+- reflect: projects a mirror image of the picture by 'swaping' each pixel. 
+- blur: blurs an image by taking the average RGB values of 8 other neighbouring pixels around each pixel. 
+- edges: detects edges of an image and creates boundary between one object with another. 
