@@ -1,2 +1,2 @@
-# Harvard CS50
-Codes for CS50 Course
+# Harvard CS50x
+Solutions for CS50x Problem Set
