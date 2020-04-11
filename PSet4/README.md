@@ -20,4 +20,4 @@ First two problem statements attempt to create a code that reads, filters and ou
 
 - [x] **recover**: recover JPEGs photo found in raw card format. 
 
-`recover.c` attempts to recover deleted photos using pointers, file pointers (fopen, fread)! However, not all info in the raw card are jpeg, the code then breaks the card into 512 byte chunks and search for jpeg headers. A new jpg file is then created in memory and write info into file. Subsequent jpeg files are created and info from raw card are continously written until all jpeg were recovered. 
+`recover.c` attempts to recover deleted photos using pointers, file pointers (fopen, fread)! However, not all info in the raw card are jpeg, the code then breaks the card into 512 byte chunks and search for jpeg headers. A new jpg file is then created in memory and written into file. Subsequent jpeg files are created and info from raw card are continously written until all jpeg files were recovered. 
