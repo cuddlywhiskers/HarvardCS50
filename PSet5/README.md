@@ -13,4 +13,4 @@ Write 5 functions to implement a [spell-checker](https://cs50.harvard.edu/x/2020
 - [x] unload: free up and returns all the memory that was previously allocated for generating the array of linked list.
 
 ---
-hash<sup>1</sup> : the djb2 algorithm was implemented, credits to http://www.cse.yorku.ca/~oz/hash.html for implementing it.
+hash<sup>1</sup> : the djb2 algorithm used was implemented by http://www.cse.yorku.ca/~oz/hash.html 
