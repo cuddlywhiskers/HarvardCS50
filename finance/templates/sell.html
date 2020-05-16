@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Company</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in dropdown %}
+                    {% if row["shares"] >= 0 %}
+                    <tr>
+                        <td>{{ row["ticker"] }}</td>
+                        <td>{{ lookup(row["ticker"])["name"] }}</td>
+                        <td>{{ row["shares"] }}</td>
+                        <td>${{ '%0.2f'|format(lookup(row["ticker"])["price"]|float) }}</td>
+                        <td>${{ '%0.2f'|format(lookup(row["ticker"])["price"] * row["shares"]|float) }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class = "form-group">
+            <select class = "form-control" name="symbol">
+                {% for option in dropdown %}
+                    {% if option["shares"] > 0 %}
+                        <option value ="{{ option.ticker }}" SELECTED>{{ option.ticker }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="sell_share" placeholder="Shares" type="number" min="1">
+        </div>
+        <button class="btn btn-primarty" type="submit">Sell</button>
+    </form>
+{% endblock %}
