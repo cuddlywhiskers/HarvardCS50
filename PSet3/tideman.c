@@ -86,7 +86,6 @@ int main(int argc, string argv[])
         }
 
         record_preferences(ranks);
-
         printf("\n");
     }
 
@@ -106,10 +105,7 @@ bool vote(int rank, string name, int ranks[])
         if (strcmp(name, candidates[i]) == 0)
         {
             // if match, update rank
-            for (int j = 0; j < candidate_count; j++)
-            {
-                ranks[rank] = i;
-            }
+            ranks[rank] = i;
             return true;
         }
     }
@@ -129,10 +125,6 @@ void record_preferences(int ranks[])
             if (i < j)
             {
                 preferences[outerLoop][innerLoop]++;
-            }
-            else
-            {
-                preferences[outerLoop][innerLoop] += 0;
             }
         }
     }
@@ -240,20 +232,28 @@ void lock_pairs(void)
     return;
 }
 
+
 // Print the winner of the election
 void print_winner(void)
 {
     // loops through locked: locked[others][candidateA] == false -> Candidate A is winner
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int i = 0; i < candidate_count; i++)
+        // go thru each inner loop to validate
+        bool pass = true;
+        for (int j = 0; j < candidate_count; j++)
         {
-            for (int j = 0; j < candidate_count; j++)
+            if (locked[j][i])
             {
-                if (!locked[j][i])
-                {
-                    printf("%s\n", candidates[i]);
-                }
+                pass = false;
+                break;
             }
+        }
+
+        if (pass)
+        {
+            printf("%s\n", candidates[i]);
+            return;
         }
     }
     return;
